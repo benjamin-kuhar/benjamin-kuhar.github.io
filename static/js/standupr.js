@@ -26,23 +26,23 @@ function standupr(){
       this.clips = [
           new Howl({
             src: ["static/audio/1.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/2.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/3.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/4.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/5.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/6.mp3"],
@@ -50,23 +50,27 @@ function standupr(){
           }),
           new Howl({
             src: ["static/audio/7.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/8.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/9.mp3"],
-            volume: 0.35
+            volume: 0.2
           }),
           new Howl({
             src: ["static/audio/10.mp3"],
-            volume: 0.35
+            volume: 0.2
+          }),
+          new Howl({
+            src: ["static/audio/11.mp3"],
+            volume: 0.2
           })
       ];
   }
   var audio = new memedio();
-  audio.clips[Math.floor(Math.random()*10)].play();
+  audio.clips[Math.floor(Math.random()*11)].play();
 }
 
