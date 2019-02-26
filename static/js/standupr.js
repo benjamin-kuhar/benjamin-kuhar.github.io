@@ -1,3 +1,5 @@
+var audio = null;
+
 function standupr(){
     var peeps = Array("Ben",
                         "Charlie",
@@ -70,7 +72,11 @@ function standupr(){
           })
       ];
   }
-  var audio = new memedio();
+  if (audio != null) {
+    for (clip in audio.clips) {
+      audio.clips[clip].stop();
+    }
+  }
+  audio = new memedio();
   audio.clips[Math.floor(Math.random()*11)].play();
 }
-
