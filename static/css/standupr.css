@@ -114,6 +114,7 @@ button {
   bottom: 20vh;
   z-index: 1;
   cursor: pointer;
+  user-select: none;
 }
 
 @keyframes changeBg {
