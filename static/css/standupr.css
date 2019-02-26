@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Staatliches");
+
+.winnar {
+  perspective: 1000px;
+}
+.winnar span {
+  transform-origin: 50% 50% -25px;
+  transform-style: preserve-3d;
+  animation: winnar 2s infinite;
+  display: inline-block;
+}
+.winnar span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.winnar span:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.winnar span:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.winnar span:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.winnar span:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.winnar span:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.winnar span:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.winnar span:nth-child(9) {
+  animation-delay: 0.45s;
+}
+.winnar span:nth-child(10) {
+  animation-delay: 0.5s;
+}
+
+@keyframes winnar {
+  0% {
+    transform: rotateX(-360deg);
+  }
+  70% {
+    transform: rotateX(0);
+  }
+}
+
+h1 {
+  position: relative;
+  margin: 0;
+  color: #fff;
+  font-size: 10rem;
+  text-shadow: 0 15px 20px rgba(0, 0, 0, 1);
+  font-family: 'Staatliches', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  user-select: none;
+}
+
+body {
+  margin: auto;
+  text-align: center;
+  background: linear-gradient(to right, rgba(138, 23, 153, 0.8) 1%, rgba(57, 150, 38, 0.5) 51%, rgba(40, 136, 226, 0.5) 100%);
+}
+
+.bgvid {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bgvid video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-size: cover;
+  mix-blend-mode: lighten;
+  z-index: -1;
+}
+
+button {
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 2vh 0vw;
+  width: 50%;
+  color: #fff;
+  font-size: 1.5rem;
+  padding-top: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+  font-family: 'Russo One', sans-serif;
+  background: linear-gradient(to right, rgba(153, 23, 136, 0.8) 1%, rgba(55, 173, 31, 0.5) 51%, rgba(40, 136, 226, 0.5) 100%);
+  background-size: 200% 200%;
+  -webkit-animation: changeBg 2s ease infinite;
+  -moz-animation: changeBg 2s ease infinite;
+  animation: changeBg 2s ease infinite;
+  outline: none;
+  border: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  position: fixed;
+  bottom: 20vh;
+  z-index: 1;
+  cursor: pointer;
+}
+
+@keyframes changeBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes changeBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes changeBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
