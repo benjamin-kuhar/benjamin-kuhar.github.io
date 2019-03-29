@@ -1,30 +1,25 @@
 var audio = null;
+var memedio = null;
 
-function standupr(){
-    var peeps = Array("Ben",
-                        "Charlie",
-                        "Jeff",
-                        "Stephen",
-                        "Paul",
-                        "Tiffany",
-                        "Tyler",
-                        "Levi",
-                        "Jesse",
-                        "Lindsey",
-                        "Jovanna",
-                        "Dave",
-                        "Kerry",
-                        "Chris",
-                        "Rutu");
-    var winnar = peeps[Math.floor(Math.random()*peeps.length)];
-    var text = document.getElementById('todays-lucky-winner');
-    var splitname = "";
-    for (char in winnar) {
-        splitname = splitname + "<span>"+winnar[char]+"</span>";
+function itIsTheDay() {
+  var today = new Date();
+  return (today.getMonth() == 3 && today.getDate() == 1)
+}
+
+function buildMemedio() {
+  if (itIsTheDay()) {
+    return function() {
+      this.clips=[];
+      for (i=0; i<11; i++) {
+        this.clips.push(new Howl({
+          src: ["static/audio/41.mp3"],
+          volume: 0.2
+        }));
+      }
     }
-    text.innerHTML = splitname;
-
-    var memedio = function() {
+  }
+  else {
+    return function() {
       this.clips = [
           new Howl({
             src: ["static/audio/1.mp3"],
@@ -71,7 +66,56 @@ function standupr(){
             volume: 0.2
           })
       ];
+    }
   }
+}
+
+function magic(){
+  if (itIsTheDay()) {
+    var vid = document.getElementById('vid');
+    vid.src = "static/video/41.mp4";
+
+    WebFont.load({
+      google: {
+        families: ["Luckiest Guy"]
+      }
+    });
+
+    text = document.getElementById('todays-lucky-winner');
+    text.style.fontFamily="Luckiest Guy";
+
+    button = document.getElementById('best-button');
+    button.style.fontFamily="Luckiest Guy";
+  }
+}
+
+function standupr(){
+  var peeps = Array("Ben",
+                      "Charlie",
+                      "Jeff",
+                      "Stephen",
+                      "Paul",
+                      "Tiffany",
+                      "Tyler",
+                      "Levi",
+                      "Jesse",
+                      "Lindsey",
+                      "Jovanna",
+                      "Dave",
+                      "Kerry",
+                      "Chris",
+                      "Rutu");
+
+  var winnar = peeps[Math.floor(Math.random()*peeps.length)];
+  var text = document.getElementById('todays-lucky-winner');
+  var splitname = "";
+  for (char in winnar) {
+      splitname = splitname + "<span>"+winnar[char]+"</span>";
+  }
+  text.innerHTML = splitname;
+
+  var memedio = buildMemedio();
+
   if (audio != null) {
     for (clip in audio.clips) {
       audio.clips[clip].stop();

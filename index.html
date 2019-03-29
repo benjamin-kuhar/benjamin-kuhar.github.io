@@ -8,13 +8,14 @@
   <link rel="shortcut icon" type="image/png" href="static/images/favicon.png">
   <title>Standupr</title>
 </head>
-<body>
+<body onload="magic();">
   <div class="bgvid">
-    <video autoplay loop muted type="video/mp4" src="static/video/tunnel.mp4"></video>
+    <video id="vid" autoplay loop muted type="video/mp4" src="static/video/tunnel.mp4"></video>
     <h1 class="winnar" id="todays-lucky-winner">???</h1>
-    <button class="btn btn-default" onclick="standupr()">I choose you!</button>
+    <button class="btn btn-default" id="best-button" onclick="standupr()">I choose you!</button>
   </div>
   <script src="static/js/standupr.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.core.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
 </body>
 </html>
