@@ -90,10 +90,7 @@ function magic(){
 }
 
 function standupr(){
-  var peeps = Array("Ben",
-                      "Charlie",
-                      "Jeff",
-                      "Stephen",
+  var peeps = Array("Stephen",
                       "Paul",
                       "Tiffany",
                       "Tyler",
@@ -103,8 +100,7 @@ function standupr(){
                       "Jovanna",
                       "Dave",
                       "Kerry",
-                      "Chris",
-                      "Rutu");
+                      "Chris");
 
   var winnar = peeps[Math.floor(Math.random()*peeps.length)];
   var text = document.getElementById('todays-lucky-winner');
